@@ -1,8 +1,9 @@
 CC=gcc
-WALL=-o -Wall
+WALL=-Wall
 
 run: $@
-	$(CC) $(WALL) $@.c && ./a.out
+	$(CC) $(WALL) $@.c
+	./a.out
 
 clean: $@
 	rm *.out

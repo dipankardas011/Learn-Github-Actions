@@ -19,6 +19,7 @@ int testing()
   assert(addition(-1, 0) == -1);
   assert(addition(12343, 0) == ERR);
   system("echo -e \"$(tput setaf 2)$(tput bold)Test PASSED: $(tput init) 🔓 Request granted\"");
+  return 0;
 }
 
 int main()
@@ -30,4 +31,5 @@ int main()
   printf("Sum: %d\n", addition(45, -5));
   printf("Sum: %d\n", addition(0, 0));
   printf("Sum: %d\n", addition(2342, 1));
+  return 0;
 }
