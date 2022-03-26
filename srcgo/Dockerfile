@@ -7,6 +7,8 @@ COPY . /app
 
 WORKDIR /app
 
-RUN go build ./main.go
+RUN go build -v ./main.go
 
-CMD ["./main.out"]
+RUN go test -v ./main.go
+
+CMD ["go", "run", "-v", "main.go"]
