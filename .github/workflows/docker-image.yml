@@ -13,14 +13,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: | 
-        cd srcC/
-        docker build . --file Dockerfile --tag test-c:1.0
-    - name: run container
-      run: | 
-        docker run test-c:1.0
+      - uses: actions/checkout@v2
+      - name: Build the Docker image
+        run: | 
+          cd srcC/
+          docker build . --file Dockerfile --tag dipugodocker/test-c:1.0
+      - name: run container
+        run: | 
+          docker run test-c:1.0
+      - name: push image
+        env:
+          SUPER_PASS: ${{ secrets.DOCKER_PASS }}
+          SUPER_USR: ${{ secrets.DOCKER_USR }}
+        run: |
+          docker login -u "$SUPER_USR" -p "$SUPER_PASS"
+          docker push dipugodocker/test-c:1.0
+      
 
   buildGo:
     runs-on: ubuntu-latest
@@ -30,7 +38,14 @@ jobs:
       - name: Build the Docker image
         run: | 
           cd srcgo/
-          docker build . --file Dockerfile --tag test-go:1.0
+          docker build . --file Dockerfile --tag dipugodocker/test-go:1.0
       - name: run container
         run: | 
           docker run test-go:1.0
+      - name: push image
+        env:
+          SUPER_PASS: ${{ secrets.DOCKER_PASS }}
+          SUPER_USR: ${{ secrets.DOCKER_USR }}
+        run: |
+          docker login -u "$SUPER_USR" -p "$SUPER_PASS"
+          docker push dipugodocker/test-go:1.0
