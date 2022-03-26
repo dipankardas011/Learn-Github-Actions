@@ -51,3 +51,11 @@ jobs:
         run: |
           docker login -u "$SUPER_USR" -p "$SUPER_PASS"
           docker push dipugodocker/test-go:1.0
+
+  conformation:
+    needs: ['buildGo', 'buildC']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Message
+        run: "echo -e \"$(tput setaf 2)$(tput bold)PUSHED docker.io $(tput init) ✅ dipugodocker/test-go:1.0 and dipugodocker/test-c:1.0\""
