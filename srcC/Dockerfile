@@ -1,4 +1,4 @@
-FROM ubuntu:21.04
+FROM ubuntu
 
 LABEL MAINTAINER="Dipankar Das"
 LABEL VERSION = "v1"
