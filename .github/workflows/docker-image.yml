@@ -8,11 +8,29 @@ on:
 
 jobs:
 
-  build:
+  buildC:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: | 
+        cd srcC/
+        docker build . --file Dockerfile --tag test-c:1.0
+    - name: run container
+      run: | 
+        docker run test-c:1.0
+
+  buildGo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the Docker image
+        run: | 
+          cd srcgo/
+          docker build . --file Dockerfile --tag test-go:1.0
+      - name: run container
+        run: | 
+          docker run test-go:1.0

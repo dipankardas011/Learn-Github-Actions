@@ -20,3 +20,8 @@ jobs:
 
     - name: Build
       run: go build -v ./srcgo/main.go
+
+    - name: Test
+      run: |
+        cd srcgo/
+        go test -v ./...
