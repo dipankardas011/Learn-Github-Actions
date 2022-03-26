@@ -19,7 +19,3 @@ jobs:
         cd srcC/
         make run
       
-    - name: cleanup
-      run: make clean
-
-    

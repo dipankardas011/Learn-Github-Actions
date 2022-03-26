@@ -18,7 +18,7 @@ int testing()
   assert(addition(0, 0) == 0);
   assert(addition(-1, 0) == -1);
   assert(addition(12343, 0) == ERR);
-  system("echo \"$(tput setaf 2)$(tput bold)Test PASSED: $(tput init) 🔓 Request granted\"");
+  system("echo -e \"$(tput setaf 2)$(tput bold)Test PASSED: $(tput init) 🔓 Request granted\"");
 }
 
 int main()
