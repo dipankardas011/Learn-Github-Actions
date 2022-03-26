@@ -12,3 +12,11 @@
 
 ## C
 * Dockerfile (CI)
+
+# Learnings
+* how to create a simple multiple language 
+* continuous integration
+  - testing
+  - running
+  - creating containers
+  - finally pushing in docker.io
