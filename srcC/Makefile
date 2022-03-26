@@ -2,7 +2,7 @@ CC=gcc
 WALL=-o -Wall
 
 run: $@
-	$(CC) $@.c && ./a.out
+	$(CC) $(WALL) $@.c && ./a.out
 
 clean: $@
 	rm *.out
