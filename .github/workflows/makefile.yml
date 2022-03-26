@@ -14,14 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: configure
-      run: ./configure
-      
     - name: Install dependencies
-      run: make
+      run: |
+        cd srcC/
+        make run
       
-    - name: Run check
-      run: make check
-      
-    - name: Run distcheck
-      run: make distcheck
