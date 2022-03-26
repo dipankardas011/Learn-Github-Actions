@@ -5,7 +5,9 @@
 [![Go](https://github.com/dipankardas011/Learn-Github-Actions/actions/workflows/go.yml/badge.svg)](https://github.com/dipankardas011/Learn-Github-Actions/actions/workflows/go.yml)
 [![Makefile CI](https://github.com/dipankardas011/Learn-Github-Actions/actions/workflows/makefile.yml/badge.svg)](https://github.com/dipankardas011/Learn-Github-Actions/actions/workflows/makefile.yml)
 
+[Github link to the CD repo](https://github.com/dipankardas011/Learn-Github-Actions-cd)
 ## GOLANG
+
 * Dockerfile (CI)
 
 ## C
